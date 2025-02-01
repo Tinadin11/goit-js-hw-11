@@ -1,6 +1,8 @@
 .form-search {
     text-align: center;
     padding: 35px 0;
+    position: relative;
+    z-index: 1;
 }
 
 .input-search {
@@ -8,7 +10,7 @@
     outline: transparent;
     padding: 10px 16px;
     margin-bottom: 8px;
-    color: gray;
+    color: #000;
     border: 1px solid #808080;
     border-radius: 4px;
 }
@@ -24,7 +26,7 @@
 .button-search {
     border-radius: 8px;
     background-color: #4E75FF;
-    border: 1px solid;
+    border: none;
     color: #fff;
     ;
     font-size: 16px;
@@ -41,15 +43,16 @@
 }
 
 .loader {
-    transform: rotateZ(45deg);
-    perspective: 1000px;
-    border-radius: 50%;
-    width: 74px;
-    height: 74px;
-    color: #111;
     display: block;
-    margin: 10vh auto 0;
-    position: relative;
+    text-align: center;
+    left: 50%;
+    font-size: 16px;
+    color: #555;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .loader:before,
@@ -59,72 +62,29 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: inherit;
+    width: max-content;
     height: inherit;
-    border-radius: 50%;
-    transform: rotateX(70deg);
-    animation: 1s spin linear infinite;
+    animation: away 3s infinite alternate ease-in-out;
 }
 
 .loader:after {
-    color: #ff3d00;
-    transform: rotateY(70deg);
-    animation-delay: 0.4s;
+    top: auto;
+    left: 0;
 }
 
-@keyframes rotate {
+@keyframes away {
     0% {
-        transform: translate(-50%, -50%) rotateZ(0deg);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) rotateZ(360deg);
-    }
-}
-
-@keyframes rotate {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) rotate(-360deg);
-    }
-}
-
-@keyframes spin {
-
-    0%,
-    100% {
-        box-shadow: 0.2em 0px 0 0px currentcolor;
-    }
-
-    12% {
-        box-shadow: 0.2em 0.2em 0 0 currentcolor;
-    }
-
-    25% {
-        box-shadow: 0 0.2em 0 0px currentcolor;
-    }
-
-    37% {
-        box-shadow: -0.2em 0.2em 0 0 currentcolor;
+        transform: translateX(0);
+        opacity: 1;
     }
 
     50% {
-        box-shadow: -0.2em 0 0 0 currentcolor;
+        opacity: 0.6;
     }
 
-    62% {
-        box-shadow: -0.2em -0.2em 0 0 currentcolor;
-    }
-
-    75% {
-        box-shadow: 0px -0.2em 0 0 currentcolor;
-    }
-
-    87% {
-        box-shadow: 0.2em -0.2em 0 0 currentcolor;
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
     }
 }
 
@@ -140,6 +100,9 @@
     row-gap: 20px;
     justify-content: center;
     padding: 20px 0;
+    position: relative;
+    z-index: 1;
+
 }
 
 .gallery-item {
@@ -174,10 +137,10 @@
     flex-direction: row;
     gap: 24px;
     align-items: center;
-    justify-content: center;
-    min-width: 320px;
     height: 48px;
-    padding: 10px 0;
+    padding: 10px;
+    min-width: 100%;
+    background-color: #fff;
 }
 
 .gallery-item:hover .info-list {
