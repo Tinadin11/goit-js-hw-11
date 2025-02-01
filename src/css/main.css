@@ -120,8 +120,6 @@
     transform: scale(1.05);
 }
 
-.gallery-link {}
-
 .gallery-link:hover {
     cursor: zoom-in;
 }
