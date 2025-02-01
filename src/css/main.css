@@ -5,23 +5,28 @@
 
 .input-search {
     width: 320px;
-    border-radius: 7px;
-    border: 2px solid #60656A;
     outline: transparent;
-    background: #EDF4FA;
     padding: 10px 16px;
     margin-bottom: 8px;
+    color: gray;
+    border: 1px solid #808080;
+    border-radius: 4px;
+}
+
+.input-search:hover {
+    border-color: #000
 }
 
 .input-search:focus {
-    border: 1px solid #808080;
+    border-color: #4E75FF
 }
 
 .button-search {
     border-radius: 8px;
-    background: #60656A;
-    border: 1px solid #60656A;
-    color: #EDF4FA;
+    background-color: #4E75FF;
+    border: 1px solid;
+    color: #fff;
+    ;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -32,9 +37,7 @@
 }
 
 .button-search:hover {
-    background: #EDF4FA;
-    border: 1px solid #60656A;
-    color: #60656A;
+    background-color: #6C8CFF;
 }
 
 .loader {
