@@ -88,20 +88,16 @@
     }
 }
 
-.container {
-    padding: 0 15px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .gallery {
     display: flex;
     flex-wrap: wrap;
     row-gap: 20px;
     justify-content: center;
-    padding: 20px 0;
     position: relative;
     z-index: 1;
+    overflow-y: auto;
+    max-height: 80vh;
+    width: 100%;
 
 }
 
